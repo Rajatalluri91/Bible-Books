@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>World of God – Bible Books Introduction</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@421&family=Mandali&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background: black;
+  color:#fff;
+  padding:10px;
+  padding-bottom:60px;
+}
+
+/* HEADER */
+.app-header{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  height:52px;
+  background:rgba(0,0,0,.55);
+  backdrop-filter:blur(10px);
+  display:flex;
+  align-items:center;
+  padding:0 12px;
+  z-index:10000;
+}
+.app-header.hide{transform:translateY(-100%)}
+.app-title{font-size:14px;font-weight:600}
+
+/* SECTION */
+.section{margin-top:70px;margin-bottom:25px}
+.section-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+.section-header h2{margin:0;font-size:1.2em;color:#ccc}
+.view-toggle{color:#00ffcc;cursor:pointer;font-size:14px}
+
+/* CONTAINER */
+.album-container{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+}
+.album-container.grid-view{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr); /* ఒక వరుసలో 2 */
+  gap:14px;
+  overflow-x:hidden;
+}
+
+/* CARD */
+.album{
+  flex:0 0 160px;
+  background:#1e1e1e;
+  border-radius:14px;
+  padding:10px;
+  text-align:center;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  transition:transform .15s,opacity .15s;
+}
+.album:active{transform:scale(.96);opacity:.85}
+
+.image-wrapper{
+  width:100%;
+  height:190px;
+  background:#222;
+  border-radius:12px;
+  overflow:hidden;
+}
+.image-wrapper img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.album h3{
+  margin-top:8px;
+  font-size:.85em;
+  color:#00ffcc;
+  font-family:'Anek Telugu',sans-serif;
+}
+
+/* FOOTER */
+.footer{
+  position:fixed;
+  bottom:0;left:0;
+  width:100%;
+  height:22px;
+  background:rgba(0,0,0,.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+  color:#ccc;
+}
+.footer span{color:#00ffcc}
+
+/* IMAGE FADE-IN */
+.image-wrapper img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity .4s ease;
+}
+
+.image-wrapper img.loaded{
+  opacity:1;
+}
+
+/* SKELETON LOADER */
+.image-wrapper{
+  position:relative;
+  background:#222;
+}
+
+.image-wrapper::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    90deg,
+    #222 25%,
+    #333 50%,
+    #222 75%
+  );
+  background-size:200% 100%;
+  animation:shimmer 1.2s infinite;
+}
+
+.image-wrapper.loaded::before{
+  display:none;
+}
+
+@keyframes shimmer{
+  0%{background-position:-200% 0}
+  100%{background-position:200% 0}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="app-header">
+  <span class="app-title">📖 World of God – Bible Books Introduction</span>
+</div>
+
+<!-- OLD TESTAMENT -->
+<div class="section">
+  <div class="section-header">
+    <h2>Old Testament</h2>
+    <div class="view-toggle" onclick="toggleView('oldTestament')">View All</div>
+  </div>
+  <div class="album-container" id="oldTestament"></div>
+</div>
+
+<!-- NEW TESTAMENT -->
+<div class="section">
+  <div class="section-header">
+    <h2>New Testament</h2>
+    <div class="view-toggle" onclick="toggleView('newTestament')">View All</div>
+  </div>
+  <div class="album-container" id="newTestament"></div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Developed by <span>&nbsp;Raja Talluri</span>
+</div>
+
+<script>
+/* ===============================
+   📖 BIBLE BOOK LIST
+   =============================== */
+const OT = [
+"Genesis","Exodus","Leviticus","Numbers","Deuteronomy",
+"Joshua","Judges","Ruth",
+"1 Samuel","2 Samuel","1 Kings","2 Kings",
+"1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther",
+"Job","Psalms","Proverbs","Ecclesiastes","Song of Solomon",
+"Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel",
+"Hosea","Joel","Amos","Obadiah","Jonah","Micah",
+"Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi"
+];
+
+const NT = [
+"Matthew","Mark","Luke","John","Acts",
+"Romans","1 Corinthians","2 Corinthians","Galatians","Ephesians",
+"Philippians","Colossians","1 Thessalonians","2 Thessalonians",
+"1 Timothy","2 Timothy","Titus","Philemon",
+"Hebrews","James","1 Peter","2 Peter",
+"1 John","2 John","3 John","Jude","Revelation"
+];
+
+/* ===============================
+   CARD CREATOR
+   =============================== */
+function createCards(list,id,testament){
+  const box=document.getElementById(id);
+
+  list.forEach(book=>{
+    const imgName = book.replace(/\s+/g,"");
+    const file = book.toLowerCase().replace(/\s+/g,"-");
+
+    const card = document.createElement("div");
+    card.className="album";
+    card.onclick=()=>location.href=`bible/${file}.html`;
+
+    card.innerHTML=`
+      <div class="image-wrapper">
+        <img 
+          loading="lazy"
+          src="https://raw.githubusercontent.com/Rajatalluri91/WOG-Images/main/${testament}/${imgName}.jpg"
+          onerror="this.src='https://raw.githubusercontent.com/Rajatalluri91/WOG-Images/main/The%20Bible.jpg'">
+      </div>
+      <h3>${book}</h3>
+    `;
+
+    const img = card.querySelector("img");
+    const wrapper = card.querySelector(".image-wrapper");
+
+    img.onload = () => {
+      img.classList.add("loaded");
+      wrapper.classList.add("loaded");
+    };
+
+    box.appendChild(card);
+  });
+}
+
+/* INIT */
+createCards(OT,"oldTestament","OT");
+createCards(NT,"newTestament","NT");
+
+/* VIEW TOGGLE */
+function toggleView(id){
+  const el=document.getElementById(id);
+  const btn=el.previousElementSibling.querySelector(".view-toggle");
+  el.classList.toggle("grid-view");
+  btn.textContent=el.classList.contains("grid-view")?"View Less":"View All";
+}
+
+/* HEADER HIDE ON SCROLL */
+let lastY=0;
+const header=document.querySelector(".app-header");
+window.addEventListener("scroll",()=>{
+  let y=window.scrollY;
+  if(y>lastY && y>60) header.classList.add("hide");
+  else header.classList.remove("hide");
+  lastY=y;
+});
+</script>
+
+</body>
+</html>
