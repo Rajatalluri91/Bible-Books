@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="te" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>నిర్గమకాండము (Exodus) - 10 ముఖ్యమైన అంశాలు</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <!-- Anek Telugu Font Import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Anek Telugu', sans-serif;
+            background-color: #f8fafc;
+            line-height: 1.8;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark body {
+            background-color: #0f172a;
+        }
+        /* Hero section gradient tailored for Exodus (Red Sea/Desert theme) */
+        .hero-section {
+            background: linear-gradient(135deg, #b91c1c 0%, #991b1b 50%, #7f1d1d 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
+            width: 80px;
+            height: 4px;
+            background-color: #ef4444; /* Red for Exodus */
+            border-radius: 2px;
+        }
+        .verse-card {
+            border-left: 4px solid #f97316;
+            background: #fff7ed;
+        }
+        .dark .verse-card {
+            background: #431407;
+            border-left-color: #fb923c;
+            color: #e5e7eb;
+        }
+        .point-number {
+            font-feature-settings: "tnum";
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
+</head>
+<body class="text-slate-800 dark:text-slate-100 dark:bg-slate-900 font-medium">
+
+    <!-- Theme Toggle Button -->
+    <button onclick="toggleTheme()" class="fixed top-6 right-6 z-50 p-3 rounded-full bg-white dark:bg-slate-800 text-slate-800 dark:text-yellow-300 shadow-lg hover:scale-110 transition-transform duration-300 border border-slate-200 dark:border-slate-700" aria-label="Toggle Dark Mode">
+        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+    </button>
+
+    <!-- Header Section -->
+    <header class="hero-section text-white py-20 px-6 text-center shadow-xl relative overflow-hidden">
+        <!-- Decorative background elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
+            <div class="absolute top-10 right-10 w-32 h-32 bg-yellow-500 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 left-10 w-48 h-48 bg-orange-400 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-md tracking-wide">బైబిల్ గ్రంథ పరిచయం</h1>
+            <h2 class="text-2xl md:text-4xl opacity-90 font-semibold mb-3 text-red-100">నిర్గమకాండము (Exodus)</h2>
+            <div class="inline-block bg-red-900/50 backdrop-blur-sm px-4 py-1 rounded-full border border-red-400/30 mb-6">
+                <p class="text-lg md:text-xl font-light text-red-50">పుస్తకం సంఖ్య - 2</p>
+            </div>
+            <div class="w-24 h-1 bg-red-300 mx-auto my-6 rounded-full"></div>
+            <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl italic leading-relaxed px-4 text-red-50 font-medium">
+                "బానిసత్వం నుండి విముక్తి, ఎర్రసముద్రం దాటడం, మరియు సీనాయి కొండపై దేవుని నిబంధన."
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 md:px-8 py-12">
+        
+        <!-- Quick Facts Section -->
+        <section class="mb-16">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 dark:text-red-300 section-title">ముఖ్య సమాచారం (Quick Facts)</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Author -->
+                <div class="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 text-center">
+                    <p class="text-xs text-slate-500 dark:text-slate-400 uppercase font-bold tracking-widest mb-1">రచయిత</p>
+                    <p class="text-xl font-bold text-red-700 dark:text-red-400">మోషే (Moses)</p>
+                </div>
+                <!-- Time -->
+                <div class="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 text-center">
+                    <p class="text-xs text-slate-500 dark:text-slate-400 uppercase font-bold tracking-widest mb-1">కాలం</p>
+                    <p class="text-xl font-bold text-red-700 dark:text-red-400">క్రీ.పూ. 1450 - 1405</p>
+                </div>
+                <!-- Chapters -->
+                <div class="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 text-center">
+                    <p class="text-xs text-slate-500 dark:text-slate-400 uppercase font-bold tracking-widest mb-1">అధ్యాయాలు</p>
+                    <p class="text-xl font-bold text-red-700 dark:text-red-400">40</p>
+                </div>
+                <!-- Place -->
+                <div class="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 text-center">
+                    <p class="text-xs text-slate-500 dark:text-slate-400 uppercase font-bold tracking-widest mb-1">ప్రదేశం</p>
+                    <p class="text-xl font-bold text-red-700 dark:text-red-400">సీనాయి అరణ్యము</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10 Important Points -->
+        <section class="space-y-12">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-slate-800 dark:text-red-300 section-title">గ్రంథంలోని 10 ముఖ్యమైన అంశాలు</h3>
+                <p class="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">ఈ పుస్తకం యొక్క సారాంశాన్ని ఈ 10 పాయింట్ల ద్వారా సులభంగా అర్థం చేసుకోవచ్చు.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Point 1 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border-l-4 border-red-500 hover:bg-red-50 dark:hover:bg-slate-700/50 transition-colors">
+                    <div class="flex items-start">
+                        <span class="flex-shrink-0 w-10 h-10 bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-300 rounded-full flex items-center justify-center font-bold text-lg mr-4 point-number">1</span>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2">ఐగుప్తు బానిసత్వం</h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm">ఇశ్రాయేలీయులు 430 సంవత్సరాలు ఐగుప్తులో బానిసలుగా కఠినమైన జీవితాన్ని గడిపారు. వారి బాధను చూసి దేవుడు వారిని దర్శించాడు.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Point 2 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border-l-4 border-orange-500 hover:bg-orange-50 dark:hover:bg-slate-700/50 transition-colors">
+                    <div class="flex items-start">
+                        <span class="flex-shrink-0 w-10 h-10 bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-300 rounded-full flex items-center justify-center font-bold text-lg mr-4 point-number">2</span>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2">మోషే జననం & పిలుపు</h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm">ఫరో ఆజ్ఞ నుండి రక్షించబడి, రాజభవనంలో పెరిగిన మోషేను దేవుడు మండుచున్న పొదలో దర్శించి, "నేను ఉన్నవాడను" అని తన నామాన్ని బయలుపరచాడు.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Point 3 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border-l-4 border-yellow-500 hover:bg-yellow-50 dark:hover:bg-slate-700/50 transition-colors">
+                    <div class="flex items-start">
+                        <span class="flex-shrink-0 w-10 h-10 bg-yellow-100 dark:bg-yellow-900 text-yellow-600 dark:text-yellow-300 rounded-full flex items-center justify-center font-bold text-lg mr-4 point-number">3</span>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2">పది తెగుళ్లు (The Ten Plagues)</h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm">ఐగుప్తు దేవతలను ఓడించి, యెహోవాయే నిజమైన దేవుడని నిరూపించడానికి దేవుడు రక్తం, కప్పలు వంటి 10 తెగుళ్లను రప్పించాడు.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Point 4 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border-l-4 border-red-600 hover:bg-red-50 dark:hover:bg-slate-700/50 transition-colors">
+                    <div class="flex items-start">
+                        <span class="flex-shrink-0 w-10 h-10 bg-red-200 dark:bg-red-800 text-red-700 dark:text-red-200 rounded-full flex items-center justify-center font-bold text-lg mr-4 point-number">4</span>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2">పస్కా పండుగ (The Passover)</h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm">సంహారకుడు ఇశ్రాయేలీయుల ఇళ్లను దాటిపోవడానికి గొర్రెపిల్ల రక్తాన్ని ద్వారబంధాలకు పూయడం. ఇది క్రీస్తు రక్షణకు గొప్ప సాదృశ్యం.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Point 5 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border-l-4 border-blue-500 hover:bg-blue-50 dark:hover:bg-slate-700/50 transition-colors">
+                    <div class="flex items-start">
+                        <span class="flex-shrink-0 w-10 h-10 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full flex items-center justify-center font-bold text-lg mr-4 point-number">5</span>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2">ఎర్ర సముద్రం చీల్చడం</h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm">ముందు సముద్రం, వెనుక సైన్యం ఉన్నప్పుడు దేవుడు సముద్రాన్ని రెండుగా చీల్చి ఇశ్రాయేలీయులను ఆరిన నేల మీద నడిపించాడు.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Point 6 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border-l-4 border-teal-500 hover:bg-teal-50 dark:hover:bg-slate-700/50 transition-colors">
+                    <div class="flex items-start">
+                        <span class="flex-shrink-0 w-10 h-10 bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-300 rounded-full flex items-center justify-center font-bold text-lg mr-4 point-number">6</span>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2">దైవిక పోషణ (మన్నా & నీళ్లు)</h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm">అరణ్యంలో ఆహారం లేనప్పుడు ఆకాశం నుండి మన్నాను, బండ నుండి నీళ్లను ఇచ్చి దేవుడు 40 ఏళ్లు పోషించాడు.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Point 7 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border-l-4 border-indigo-500 hover:bg-indigo-50 dark:hover:bg-slate-700/50 transition-colors">
+                    <div class="flex items-start">
+                        <span class="flex-shrink-0 w-10 h-10 bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-300 rounded-full flex items-center justify-center font-bold text-lg mr-4 point-number">7</span>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2">పది ఆజ్ఞలు (Ten Commandments)</h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm">సీనాయి పర్వతం మీద దేవుడు వ్రాసిన పలకలను మోషేకు ఇచ్చాడు. "నేను తప్ప వేరొక దేవుడు నీకు ఉండకూడదు" అనేది ప్రధాన ఆజ్ఞ.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Point 8 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border-l-4 border-purple-500 hover:bg-purple-50 dark:hover:bg-slate-700/50 transition-colors">
+                    <div class="flex items-start">
+                        <span class="flex-shrink-0 w-10 h-10 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 rounded-full flex items-center justify-center font-bold text-lg mr-4 point-number">8</span>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2">మందసము (The Tabernacle)</h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm">దేవుడు ప్రజల మధ్య నివసించడానికి ఒక పరిశుద్ధ స్థలాన్ని నిర్మించమని ఆజ్ఞాపించాడు. ఇది దేవుని సన్నిధికి గుర్తు.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Point 9 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border-l-4 border-gray-500 hover:bg-gray-50 dark:hover:bg-slate-700/50 transition-colors">
+                    <div class="flex items-start">
+                        <span class="flex-shrink-0 w-10 h-10 bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full flex items-center justify-center font-bold text-lg mr-4 point-number">9</span>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2">బంగారు దూడ & విగ్రహారాధన</h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm">మోషే కొండ మీద ఉన్నప్పుడు ప్రజలు ఓపిక లేక బంగారు దూడను చేసుకున్నారు. ఇది దేవునికి కోపం తెప్పించింది.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Point 10 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border-l-4 border-green-500 hover:bg-green-50 dark:hover:bg-slate-700/50 transition-colors">
+                    <div class="flex items-start">
+                        <span class="flex-shrink-0 w-10 h-10 bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300 rounded-full flex items-center justify-center font-bold text-lg mr-4 point-number">10</span>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2">దేవుని మహిమ</h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm">పని పూర్తయిన తర్వాత దేవుని మహిమ మేఘం రూపంలో గుడారం మీదకి దిగివచ్చింది. దేవుడు ఇశ్రాయేలీయుల మధ్య నివాసం చేశాడు.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Key Verses Section -->
+        <section class="mt-12 bg-slate-100 dark:bg-slate-800/50 p-8 rounded-3xl">
+            <h3 class="text-2xl font-bold text-center text-slate-800 dark:text-slate-200 mb-8">కంఠస్థం చేయవలసిన వచనాలు</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="verse-card p-6 rounded-xl shadow-sm">
+                    <h5 class="font-bold text-lg text-amber-800 dark:text-amber-400 mb-2">నిర్గమకాండము 3:14</h5>
+                    <p class="text-slate-700 dark:text-slate-300 italic">"అందుకు దేవుడు– నేను ఉన్నవాడను అను వాడనై యున్నానని మోషేతో చెప్పెను."</p>
+                </div>
+                <div class="verse-card p-6 rounded-xl shadow-sm">
+                    <h5 class="font-bold text-lg text-amber-800 dark:text-amber-400 mb-2">నిర్గమకాండము 20:3</h5>
+                    <p class="text-slate-700 dark:text-slate-300 italic">"నేను తప్ప వేరొక దేవుడు నీకు ఉండకూడదు."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="mt-20 text-center px-4">
+            <div class="p-1 bg-gradient-to-r from-red-600 via-orange-600 to-yellow-600 rounded-[2.5rem] shadow-2xl inline-block w-full max-w-4xl">
+                <div class="bg-white dark:bg-slate-900 rounded-[2.4rem] py-16 px-8 md:px-12">
+                    <h3 class="text-3xl font-bold mb-6 text-slate-800 dark:text-white">ముగింపు</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-10 max-w-3xl mx-auto">
+                        ఈ 10 అంశాలు దేవుని శక్తిని, ఆయన రక్షణను మరియు పరిశుద్ధతను మనకు గుర్తుచేస్తాయి. బానిసత్వం నుండి విడిపించిన దేవుడు, మనల్ని కూడా పాపం నుండి విడిపించడానికి సమర్థుడు.
+                    </p>
+                    <hr class="border-slate-200 dark:border-slate-700 w-1/2 mx-auto mb-10">
+                    <p class="text-2xl font-light mb-8 italic text-red-600 dark:text-red-300">"రేపటి భాగంలో 3వ పుస్తకం గురించి తెలుసుకుందాం."</p>
+                    
+                    <button onclick="showSubscribeMessage()" class="group relative bg-slate-800 dark:bg-white dark:text-slate-900 text-white font-bold py-4 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">▶️</span>
+                            <span class="text-lg tracking-wide">Subscribe YouTube Channel</span>
+                        </div>
+                    </button>
+                    
+                    <p class="mt-12 text-red-600 dark:text-red-400 text-3xl font-bold tracking-widest animate-pulse">ఆమెన్ (Amen).</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white dark:bg-slate-900 py-12 text-center border-t border-slate-200 dark:border-slate-800 mt-20">
+        <p class="text-slate-600 dark:text-slate-400 font-medium mb-2">© 2024 బైబిల్ గ్రంథ పరిచయ మాలిక</p>
+        <p class="text-sm text-slate-400 dark:text-slate-600">సత్యము మిమ్మల్ని స్వతంత్రులుగా చేయును.</p>
+    </footer>
+
+    <!-- Modal Notification -->
+    <div id="modal-backdrop" class="fixed inset-0 bg-slate-900/80 hidden z-50 backdrop-blur-sm transition-all duration-300 flex items-center justify-center">
+        <div id="modal-content" class="bg-white dark:bg-slate-800 p-10 rounded-2xl shadow-2xl text-center border-t-8 border-red-600 w-11/12 max-w-lg transform scale-90 opacity-0 transition-all duration-300">
+            <div class="text-red-600 text-7xl mb-6 animate-bounce">🔔</div>
+            <h2 class="text-3xl font-black mb-4 text-slate-800 dark:text-slate-100 tracking-tight">ధన్యవాదాలు!</h2>
+            <p class="text-slate-600 dark:text-slate-300 text-lg mb-8 leading-relaxed">మా యూట్యూబ్ ఛానల్ సందర్శించి, దైవిక మర్మాలను మరియు వాక్య సత్యాలను తెలుసుకోండి.</p>
+            <button id="close-btn" class="bg-slate-900 hover:bg-black dark:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold px-12 py-4 rounded-xl shadow-lg transition-all w-full text-lg">సరే (Close)</button>
+        </div>
+    </div>
+
+    <script>
+        // Check for saved theme preference or use system preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            document.getElementById('sun-icon').classList.remove('hidden');
+            document.getElementById('moon-icon').classList.add('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            document.getElementById('sun-icon').classList.add('hidden');
+            document.getElementById('moon-icon').classList.remove('hidden');
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.theme = 'light';
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            } else {
+                html.classList.add('dark');
+                localStorage.theme = 'dark';
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            }
+        }
+
+        function showSubscribeMessage() {
+            const backdrop = document.getElementById('modal-backdrop');
+            const content = document.getElementById('modal-content');
+            
+            backdrop.classList.remove('hidden');
+            
+            // Small delay to allow display:block to apply before transition
+            setTimeout(() => {
+                content.classList.remove('scale-90', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+
+            document.getElementById('close-btn').onclick = function() {
+                content.classList.remove('scale-100', 'opacity-100');
+                content.classList.add('scale-90', 'opacity-0');
+                setTimeout(() => {
+                    backdrop.classList.add('hidden');
+                }, 300);
+            };
+            
+            // Close on backdrop click
+            backdrop.onclick = function(e) {
+                if(e.target === backdrop) {
+                    document.getElementById('close-btn').click();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
