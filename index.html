@@ -5,128 +5,122 @@
 <title>World of God – Bible Books Introduction</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@421&family=Mandali&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
   font-family:Arial,sans-serif;
-  background: black;
+  background:black;
   color:#fff;
   padding:10px;
   padding-bottom:60px;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .app-header{
   position:fixed;
   top:0;left:0;
   width:100%;
   height:52px;
-  background:rgba(0,0,0,.55);
+  background:rgba(0,0,0,.6);
   backdrop-filter:blur(10px);
   display:flex;
   align-items:center;
   padding:0 12px;
   z-index:10000;
+  transition:transform .3s ease;
 }
 .app-header.hide{transform:translateY(-100%)}
-.app-title{font-size:14px;font-weight:600}
+.app-title{
+  font-size:14px;
+  font-weight:600;
+}
 
-/* SECTION */
-.section{margin-top:70px;margin-bottom:25px}
+/* ================= SECTION ================= */
+.section{
+  margin-top:70px;
+  margin-bottom:30px;
+}
+
 .section-header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
-.section-header h2{margin:0;font-size:1.2em;color:#ccc}
-.view-toggle{color:#00ffcc;cursor:pointer;font-size:14px}
 
-/* CONTAINER */
+.section-header h2{
+  margin:0;
+  font-size:1.2em;
+  color:#ccc;
+}
+
+.view-toggle{
+  color:#00ffcc;
+  cursor:pointer;
+  font-size:14px;
+  font-weight:500;
+  transition:opacity .2s ease;
+}
+.view-toggle:hover{
+  opacity:.7;
+}
+
+/* ================= ALBUM CONTAINER ================= */
+
+/* DEFAULT → Horizontal Scroll */
 .album-container{
   display:flex;
   gap:14px;
   overflow-x:auto;
   scroll-behavior:smooth;
+  transition:all .3s ease;
 }
+
+/* GRID VIEW (when View All clicked) */
 .album-container.grid-view{
   display:grid;
-  grid-template-columns:repeat(2, 1fr); /* ఒక వరుసలో 2 */
+  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
   gap:14px;
   overflow-x:hidden;
 }
 
-/* CARD */
+/* Hide scrollbar (optional clean look) */
+.album-container::-webkit-scrollbar{
+  display:none;
+}
+
+/* ================= CARD ================= */
 .album{
-  flex:0 0 160px;
+  min-width:160px;
   background:#1e1e1e;
   border-radius:14px;
   padding:10px;
   text-align:center;
   cursor:pointer;
-  position:relative;
-  overflow:hidden;
-  transition:transform .15s,opacity .15s;
+  transition:transform .2s ease, opacity .2s ease;
 }
-.album:active{transform:scale(.96);opacity:.85}
 
+.album:hover{
+  transform:translateY(-4px);
+}
+
+.album:active{
+  transform:scale(.96);
+  opacity:.85;
+}
+
+/* ================= IMAGE ================= */
 .image-wrapper{
-  width:100%;
-  height:190px;
-  background:#222;
+  position:relative;
+  aspect-ratio:4/5;
   border-radius:12px;
   overflow:hidden;
-}
-.image-wrapper img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.album h3{
-  margin-top:8px;
-  font-size:.85em;
-  color:#00ffcc;
-  font-family:'Anek Telugu',sans-serif;
-}
-
-/* FOOTER */
-.footer{
-  position:fixed;
-  bottom:0;left:0;
-  width:100%;
-  height:22px;
-  background:rgba(0,0,0,.6);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:13px;
-  color:#ccc;
-}
-.footer span{color:#00ffcc}
-
-/* IMAGE FADE-IN */
-.image-wrapper img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:0;
-  transition:opacity .4s ease;
-}
-
-.image-wrapper img.loaded{
-  opacity:1;
-}
-
-/* SKELETON LOADER */
-.image-wrapper{
-  position:relative;
   background:#222;
 }
 
+/* Skeleton Loading Effect */
 .image-wrapper::before{
   content:"";
   position:absolute;
@@ -149,90 +143,175 @@ body{
   0%{background-position:-200% 0}
   100%{background-position:200% 0}
 }
+
+/* Image Fade-in */
+.image-wrapper img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity .4s ease;
+}
+
+.image-wrapper img.loaded{
+  opacity:1;
+}
+
+/* ================= TITLE ================= */
+.album h3{
+  margin-top:8px;
+  font-size:.85em;
+  color:#00ffcc;
+  font-family:'Anek Telugu',sans-serif;
+}
+
+/* ================= FOOTER ================= */
+.footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:24px;
+  background:rgba(0,0,0,.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+  color:#ccc;
+}
+
+.footer span{
+  color:#00ffcc;
+}
+/* ================= SEARCH BAR ================= */
+.search-bar{
+  margin-top:60px;
+  margin-bottom:15px;
+}
+
+.search-bar input{
+  width:100%;
+  padding:10px 14px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+  background:#1e1e1e;
+  color:#fff;
+  font-size:14px;
+}
+
+.search-bar input::placeholder{
+  color:#888;
+}
+
+
+/* ================= TRANSPARENT SCROLL TO TOP ================= */
+#scrollTopBtn{
+  position:fixed;
+  bottom:60px;
+  right:20px;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.08); /* Transparent */
+  backdrop-filter:blur(8px);
+  color:#00ffcc;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  transition:all .3s ease;
+  z-index:9999;
+  box-shadow:0 0 12px rgba(0,255,204,.3);
+
+}
+
+/* Hover Effect */
+#scrollTopBtn:hover{
+  background:rgba(0,255,204,.15);
+  transform:translateY(-4px);
+}
+
+
+
 </style>
 </head>
+<div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Search Bible books...">
+</div>
 
 <body>
 
-<!-- HEADER -->
 <div class="app-header">
   <span class="app-title">📖 World of God – Bible Books Introduction</span>
 </div>
 
-<!-- OLD TESTAMENT -->
 <div class="section">
   <div class="section-header">
     <h2>Old Testament</h2>
-    <div class="view-toggle" onclick="toggleView('oldTestament')">View All</div>
+   <div class="view-toggle" onclick="toggleView('oldTestament',this)">View All</div>
   </div>
   <div class="album-container" id="oldTestament"></div>
 </div>
 
-<!-- NEW TESTAMENT -->
 <div class="section">
   <div class="section-header">
     <h2>New Testament</h2>
-    <div class="view-toggle" onclick="toggleView('newTestament')">View All</div>
+    <div class="view-toggle" onclick="toggleView('newTestament',this)">View All</div>
   </div>
   <div class="album-container" id="newTestament"></div>
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
   Developed by <span>&nbsp;Raja Talluri</span>
 </div>
 
+
+<button id="scrollTopBtn">↑</button>
+
 <script>
-/* ===============================
-   📖 BIBLE BOOK LIST
-   =============================== */
-const OT = [
-"Genesis","Exodus","Leviticus","Numbers","Deuteronomy",
-"Joshua","Judges","Ruth",
-"1 Samuel","2 Samuel","1 Kings","2 Kings",
+const OT = ["Genesis","Exodus","Leviticus","Numbers","Deuteronomy",
+"Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings",
 "1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther",
 "Job","Psalms","Proverbs","Ecclesiastes","Song of Solomon",
 "Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel",
 "Hosea","Joel","Amos","Obadiah","Jonah","Micah",
-"Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi"
-];
+"Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi"];
 
-const NT = [
-"Matthew","Mark","Luke","John","Acts",
+const NT = ["Matthew","Mark","Luke","John","Acts",
 "Romans","1 Corinthians","2 Corinthians","Galatians","Ephesians",
 "Philippians","Colossians","1 Thessalonians","2 Thessalonians",
 "1 Timothy","2 Timothy","Titus","Philemon",
 "Hebrews","James","1 Peter","2 Peter",
-"1 John","2 John","3 John","Jude","Revelation"
-];
+"1 John","2 John","3 John","Jude","Revelation"];
 
-/* ===============================
-   CARD CREATOR
-   =============================== */
 function createCards(list,id,testament){
   const box=document.getElementById(id);
 
   list.forEach(book=>{
-    const imgName = book.replace(/\s+/g,"");
-    const file = book.toLowerCase().replace(/\s+/g,"-");
+    const imgName=book.replace(/\s+/g,"");
+    const file=book.toLowerCase().replace(/\s+/g,"-");
 
-    const card = document.createElement("div");
+    const card=document.createElement("div");
     card.className="album";
     card.onclick=()=>location.href=`${testament}/${file}.html`;
+
     card.innerHTML=`
       <div class="image-wrapper">
-        <img 
-          loading="lazy"
-          src="https://raw.githubusercontent.com/Rajatalluri91/WOG-Images/main/${testament}/${imgName}.jpg"
-          onerror="this.src='https://raw.githubusercontent.com/Rajatalluri91/WOG-Images/main/The%20Bible.jpg'">
+        <img loading="lazy"
+          src="https://cdn.jsdelivr.net/gh/Rajatalluri91/WOG-Images@main/${testament}/${imgName}.jpg"
+          onerror="this.src='https://cdn.jsdelivr.net/gh/Rajatalluri91/WOG-Images@main/The%20Bible.jpg'">
       </div>
       <h3>${book}</h3>
     `;
 
-    const img = card.querySelector("img");
-    const wrapper = card.querySelector(".image-wrapper");
+    const img=card.querySelector("img");
+    const wrapper=card.querySelector(".image-wrapper");
 
-    img.onload = () => {
+    img.onload=()=>{
       img.classList.add("loaded");
       wrapper.classList.add("loaded");
     };
@@ -241,19 +320,15 @@ function createCards(list,id,testament){
   });
 }
 
-/* INIT */
 createCards(OT,"oldTestament","OT");
 createCards(NT,"newTestament","NT");
 
-/* VIEW TOGGLE */
-function toggleView(id){
+function toggleView(id,btn){
   const el=document.getElementById(id);
-  const btn=el.previousElementSibling.querySelector(".view-toggle");
   el.classList.toggle("grid-view");
   btn.textContent=el.classList.contains("grid-view")?"View Less":"View All";
 }
 
-/* HEADER HIDE ON SCROLL */
 let lastY=0;
 const header=document.querySelector(".app-header");
 window.addEventListener("scroll",()=>{
@@ -262,6 +337,41 @@ window.addEventListener("scroll",()=>{
   else header.classList.remove("hide");
   lastY=y;
 });
+
+
+// SEARCH FILTER
+document.getElementById("searchInput").addEventListener("input",function(){
+  const value=this.value.toLowerCase();
+
+  document.querySelectorAll(".album").forEach(card=>{
+    const text=card.innerText.toLowerCase();
+
+    if(text.includes(value)){
+      card.style.display="";
+    }else{
+      card.style.display="none";
+    }
+  });
+});
+
+
+const scrollBtn=document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll",()=>{
+  if(window.scrollY>200){
+    scrollBtn.style.display="flex";
+  }else{
+    scrollBtn.style.display="none";
+  }
+});
+
+scrollBtn.addEventListener("click",()=>{
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+});
+
 </script>
 
 </body>
