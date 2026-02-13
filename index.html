@@ -184,25 +184,46 @@ body{
   color:#00ffcc;
 }
 /* ================= SEARCH BAR ================= */
+
 .search-bar{
-  margin-top:60px;
-  margin-bottom:15px;
+  margin:65px auto 15px auto;   /* header space + center */
+  padding:0 4px;
+  width:100%;
+  max-width:600px;              /* desktop max width */
 }
 
 .search-bar input{
   width:100%;
-  padding:10px 14px;
-  border-radius:10px;
-  border:none;
+  box-sizing:border-box;        /* Prevent overflow */
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.15);
   outline:none;
   background:#1e1e1e;
-  color:#fff;
+  color:#ffffff;
   font-size:14px;
+  font-family:'Anek Telugu',sans-serif;
+  transition:all .3s ease;
 }
 
+/* Placeholder */
 .search-bar input::placeholder{
   color:#888;
+  font-weight:400;
 }
+
+/* Focus Effect */
+.search-bar input:focus{
+  border-color:#00ffcc;
+  box-shadow:0 0 8px rgba(0,255,204,.35);
+  background:#222;
+}
+
+/* Optional subtle hover */
+.search-bar input:hover{
+  border-color:rgba(255,255,255,.3);
+}
+
 
 
 /* ================= TRANSPARENT SCROLL TO TOP ================= */
