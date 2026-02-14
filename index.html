@@ -13,10 +13,9 @@ body{
   font-family:Arial,sans-serif;
   background:black;
   color:#fff;
-  padding:10px;
+  padding:0;
   padding-bottom:60px;
 }
-
 /* ================= HEADER ================= */
 .app-header{
   position:fixed;
@@ -39,7 +38,7 @@ body{
 
 /* ================= SECTION ================= */
 .section{
-  margin-top:70px;
+  margin-top:20px;
   margin-bottom:30px;
 }
 
@@ -183,48 +182,58 @@ body{
 .footer span{
   color:#00ffcc;
 }
+
 /* ================= SEARCH BAR ================= */
 
 .search-bar{
-  margin:65px auto 15px auto;   /* header space + center */
-  padding:0 4px;
+  margin-top:70px;
+  margin-bottom:25px;
+  display:flex;
+  justify-content:center;
   width:100%;
-  max-width:600px;              /* desktop max width */
 }
 
-.search-bar input{
+.search-wrapper{
+  position:relative;
+  width:90%;
+  max-width:500px;
+}
+
+/* ICON */
+.search-icon{
+  position:absolute;
+  left:15px;
+  top:55%;
+  transform:translateY(-50%);
+  color:#00ffcc;
+  font-size:16px;
+  pointer-events:none; /* prevents blocking click */
+  z-index:2;
+}
+
+/* INPUT */
+.search-wrapper input{
   width:100%;
-  box-sizing:border-box;        /* Prevent overflow */
-  padding:12px 14px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.15);
+  padding:14px 18px 14px 45px; /* space for icon */
+  border-radius:30px;
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);
+  color:#fff;
+  font-size:15px;
   outline:none;
-  background:#1e1e1e;
-  color:#ffffff;
-  font-size:14px;
-  font-family:'Anek Telugu',sans-serif;
-  transition:all .3s ease;
+  box-sizing:border-box;
+  box-shadow:0 0 10px rgba(0,255,204,.15);
 }
 
-/* Placeholder */
-.search-bar input::placeholder{
-  color:#888;
-  font-weight:400;
+.search-wrapper input::placeholder{
+  color:#bbb;
 }
 
-/* Focus Effect */
-.search-bar input:focus{
-  border-color:#00ffcc;
-  box-shadow:0 0 8px rgba(0,255,204,.35);
-  background:#222;
+.search-wrapper input:focus{
+  border:1px solid #00ffcc;
+  box-shadow:0 0 18px rgba(0,255,204,.6);
 }
-
-/* Optional subtle hover */
-.search-bar input:hover{
-  border-color:rgba(255,255,255,.3);
-}
-
-
 
 /* ================= TRANSPARENT SCROLL TO TOP ================= */
 #scrollTopBtn{
@@ -256,18 +265,50 @@ body{
   transform:translateY(-4px);
 }
 
+/* Remove blue tap highlight (Mobile Chrome / Android) */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
 
+/* Optional: Remove focus outline */
+.album:focus,
+.view-toggle:focus,
+button:focus,
+input:focus {
+  outline: none;
+}
 
+@media (max-width:480px){
+  .search-bar{
+    margin-top:70px;
+  }
+}
+.main-content{
+  padding:0 5px;   /* This gives side spacing */
+}
 </style>
 </head>
 
 <body>
-<div class="search-bar">
-  <input type="text" id="searchInput" placeholder="Search Bible books...">
-</div>
+
   
 <div class="app-header">
+    
+    
   <span class="app-title">📖 World of God – Bible Books Introduction</span>
+  
+</div>
+<div class="main-content">
+    
+<div class="search-bar">
+  <div class="search-wrapper">
+    <span class="search-icon">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="#00ffcc">
+    <path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/>
+  </svg>
+</span>
+    <input type="text" id="searchInput" placeholder="Search Bible books...">
+  </div>
 </div>
 
 <div class="section">
@@ -285,7 +326,7 @@ body{
   </div>
   <div class="album-container" id="newTestament"></div>
 </div>
-
+</div>
 <div class="footer">
   Developed by <span>&nbsp;Raja Talluri</span>
 </div>
